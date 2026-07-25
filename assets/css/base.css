@@ -1,0 +1,199 @@
+/* ===================================================
+   base.css — Reset, utilities, WhatsApp FAB
+   =================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow:
+    0 4px 14px rgba(37, 211, 102, 0.35),
+    0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: wpp-pulse 2.5s infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+.whatsapp-fab:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.whatsapp-fab svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+@keyframes wpp-pulse {
+  0%   { box-shadow: 0 4px 14px rgba(37,211,102,.35), 0 0 0 0 rgba(37,211,102,.4); }
+  70%  { box-shadow: 0 4px 14px rgba(37,211,102,.35), 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 4px 14px rgba(37,211,102,.35), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-fab {
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-fab svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* --- Scroll Reveal Animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-child {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-child.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Hero Entrance --- */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-animate .hero-tag-anim {
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-animate .hero-title-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-animate .hero-desc-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-animate .hero-cta-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-visible .hero-tag-anim,
+.hero-visible .hero-title-anim,
+.hero-visible .hero-desc-anim,
+.hero-visible .hero-cta-anim {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- Parallax base --- */
+[class*="-hero-bg"] {
+  will-change: transform;
+  transform: scale(1.05);
+}
+
+/* --- Prefers reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-child, .hero-animate,
+  .hero-animate .hero-tag-anim,
+  .hero-animate .hero-title-anim,
+  .hero-animate .hero-desc-anim,
+  .hero-animate .hero-cta-anim {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  [class*="-hero-bg"] { transform: none !important; will-change: auto; }
+}
