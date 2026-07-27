@@ -8,7 +8,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     :root{--hub-bg:#08080a;--hub-surface:rgba(255,255,255,.04);--hub-border:rgba(255,255,255,.08);--hub-text:#e4e4e7;--hub-soft:#71717a;--hub-accent:#a78bfa;--hub-accent2:#6ee7b7;--hub-accent3:#38bdf8}
-    body{font-family:'Inter',sans-serif;background:var(--hub-bg);color:var(--hub-text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:32px 24px 100px;position:relative;overflow:hidden}
+    body{font-family:'Inter',sans-serif;background:var(--hub-bg);color:var(--hub-text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:32px 24px;position:relative;overflow-x:hidden}
     body::before{content:'';position:fixed;inset:0;z-index:0;background:
       radial-gradient(ellipse 600px 400px at 20% 20%,rgba(167,139,250,.12),transparent),
       radial-gradient(ellipse 500px 350px at 80% 30%,rgba(56,189,248,.1),transparent),
@@ -33,12 +33,15 @@
     .hub-card p{font-size:.8125rem;color:var(--hub-soft);font-weight:300;line-height:1.6;margin-bottom:14px}
     .hub-link{font-size:.8125rem;font-weight:600;color:var(--hub-accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
     .hub-link:hover{gap:10px}
-    .hub-footer{margin-top:40px;font-size:.75rem;color:var(--hub-soft);font-weight:300;text-align:center}
+    .hub-whatsapp{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding:14px 28px;background:#25d366;color:#fff;font-size:.875rem;font-weight:600;border-radius:52px;box-shadow:0 4px 18px rgba(37,211,102,.3);transition:all .3s;animation:wpp-pulse 2.5s infinite}
+    .hub-whatsapp:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.45);animation:none}
+    .hub-whatsapp svg{width:24px;height:24px;fill:#fff}
+    .hub-footer{margin-top:24px;font-size:.75rem;color:var(--hub-soft);font-weight:300;text-align:center}
     @media(max-width:900px){
       .hub-grid{grid-template-columns:repeat(2,1fr);gap:14px}
     }
     @media(max-width:480px){
-      body{padding:24px 16px;justify-content:flex-start;padding-top:60px}
+      body{padding:32px 16px 24px;justify-content:flex-start}
       body::before{background:
         radial-gradient(ellipse 300px 250px at 10% 10%,rgba(167,139,250,.15),transparent),
         radial-gradient(ellipse 250px 200px at 90% 40%,rgba(56,189,248,.12),transparent),
@@ -85,13 +88,14 @@
     </a>
   </div>
 
-  <div class="hub-footer">
-    <p>&copy; 2025 SitesLink. Todos os direitos reservados.</p>
-  </div>
-
-  <a href="https://wa.me/5511984456110?text=Ol%C3%A1%20Rafael%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20seus%20servi%C3%A7os." target="_blank" rel="noopener" class="whatsapp-fab fab-visible" aria-label="WhatsApp">
+  <a href="https://wa.me/5511984456110?text=Ol%C3%A1%20Rafael%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20seus%20servi%C3%A7os." target="_blank" rel="noopener" class="hub-whatsapp" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16.004 2.002c-7.732 0-14 6.268-14 14 0 2.469.654 4.878 1.896 6.994L2 30l7.188-1.884A13.94 13.94 0 0 0 16.004 30c7.732 0 14-6.268 14-14s-6.268-13.998-14-13.998zm0 25.6a11.58 11.58 0 0 1-5.902-1.618l-.424-.252-4.386 1.15 1.17-4.276-.276-.44a11.56 11.56 0 0 1-1.778-6.166c0-6.398 5.206-11.604 11.604-11.604S27.604 9.602 27.604 16s-5.202 11.602-11.6 11.602zm6.362-8.686c-.35-.174-2.066-1.02-2.386-1.136-.32-.118-.552-.174-.784.174s-.9 1.136-1.104 1.37c-.204.232-.406.262-.756.088-.35-.174-1.474-.544-2.81-1.734-1.038-.926-1.74-2.07-1.944-2.42-.204-.35-.022-.54.154-.714.158-.156.35-.408.524-.612.176-.204.234-.35.352-.582.118-.234.058-.438-.03-.612-.088-.174-.784-1.89-1.074-2.59-.282-.68-.57-.588-.784-.598l-.668-.012c-.232 0-.608.088-.926.438s-1.214 1.186-1.214 2.892 1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.24.83.358 1.476.572 1.98.732.832.264 1.59.226 2.188.138.668-.1 2.066-.844 2.356-1.66.292-.816.292-1.516.204-1.66-.088-.146-.32-.234-.668-.408z"/></svg>
+    <span>Fale com Rafael</span>
   </a>
+
+  <div class="hub-footer">
+    <p>&copy; 2026 SitesLink. Todos os direitos reservados.</p>
+  </div>
 
 <script>
 fetch('/config.json?t='+Date.now()).then(function(r){return r.json()}).then(function(cfg){
