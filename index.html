@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SitesLink — Hub de Desenvolvimento</title>
+  <title>SitesLink — Portfólio</title>
   <link rel="stylesheet" href="assets/css/base.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     :root{--hub-bg:#08080a;--hub-surface:rgba(255,255,255,.04);--hub-border:rgba(255,255,255,.08);--hub-text:#e4e4e7;--hub-soft:#71717a;--hub-accent:#a78bfa;--hub-accent2:#6ee7b7;--hub-accent3:#38bdf8}
-    body{font-family:'Inter',sans-serif;background:var(--hub-bg);color:var(--hub-text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:32px 24px;position:relative;overflow:hidden}
+    body{font-family:'Inter',sans-serif;background:var(--hub-bg);color:var(--hub-text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:32px 24px 100px;position:relative;overflow:hidden}
     body::before{content:'';position:fixed;inset:0;z-index:0;background:
       radial-gradient(ellipse 600px 400px at 20% 20%,rgba(167,139,250,.12),transparent),
       radial-gradient(ellipse 500px 350px at 80% 30%,rgba(56,189,248,.1),transparent),
@@ -34,7 +34,6 @@
     .hub-link{font-size:.8125rem;font-weight:600;color:var(--hub-accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
     .hub-link:hover{gap:10px}
     .hub-footer{margin-top:40px;font-size:.75rem;color:var(--hub-soft);font-weight:300;text-align:center}
-    .hub-footer code{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:3px 8px;border-radius:4px;font-size:.75rem}
     @media(max-width:900px){
       .hub-grid{grid-template-columns:repeat(2,1fr);gap:14px}
     }
@@ -54,15 +53,14 @@
       .hub-card p{display:none}
       .hub-link{margin-left:auto;flex-shrink:0;font-size:.8125rem}
       .hub-footer{margin-top:32px}
-      .hub-footer code{font-size:.7rem}
     }
   </style>
 </head>
 <body>
 
-  <span class="hub-badge">Ambiente Local</span>
+  <span class="hub-badge">Portfólio</span>
   <h1>SitesLink</h1>
-  <p class="hub-sub">Hub de desenvolvimento &mdash; acesse cada landing page abaixo.</p>
+  <p class="hub-sub">Conheça nossos projetos &mdash; selecione um site abaixo.</p>
 
   <div class="hub-grid">
     <a href="/cris-doces/" class="hub-card" data-site="cris-doces">
@@ -88,8 +86,12 @@
   </div>
 
   <div class="hub-footer">
-    <p>Execute com <code>npx serve .</code> ou use a extensão <strong>Live Server</strong> do VS Code.</p>
+    <p>&copy; 2025 SitesLink. Todos os direitos reservados.</p>
   </div>
+
+  <a href="https://wa.me/5511984456110?text=Ol%C3%A1%20Rafael%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20seus%20servi%C3%A7os." target="_blank" rel="noopener" class="whatsapp-fab fab-visible" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16.004 2.002c-7.732 0-14 6.268-14 14 0 2.469.654 4.878 1.896 6.994L2 30l7.188-1.884A13.94 13.94 0 0 0 16.004 30c7.732 0 14-6.268 14-14s-6.268-13.998-14-13.998zm0 25.6a11.58 11.58 0 0 1-5.902-1.618l-.424-.252-4.386 1.15 1.17-4.276-.276-.44a11.56 11.56 0 0 1-1.778-6.166c0-6.398 5.206-11.604 11.604-11.604S27.604 9.602 27.604 16s-5.202 11.602-11.6 11.602zm6.362-8.686c-.35-.174-2.066-1.02-2.386-1.136-.32-.118-.552-.174-.784.174s-.9 1.136-1.104 1.37c-.204.232-.406.262-.756.088-.35-.174-1.474-.544-2.81-1.734-1.038-.926-1.74-2.07-1.944-2.42-.204-.35-.022-.54.154-.714.158-.156.35-.408.524-.612.176-.204.234-.35.352-.582.118-.234.058-.438-.03-.612-.088-.174-.784-1.89-1.074-2.59-.282-.68-.57-.588-.784-.598l-.668-.012c-.232 0-.608.088-.926.438s-1.214 1.186-1.214 2.892 1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.24.83.358 1.476.572 1.98.732.832.264 1.59.226 2.188.138.668-.1 2.066-.844 2.356-1.66.292-.816.292-1.516.204-1.66-.088-.146-.32-.234-.668-.408z"/></svg>
+  </a>
 
 <script>
 fetch('/config.json?t='+Date.now()).then(function(r){return r.json()}).then(function(cfg){
