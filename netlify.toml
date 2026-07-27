@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "https://crisdoces.siteslink.com.br/*"
+  to = "/cris-doces/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://ulissesinformatica.siteslink.com.br/*"
+  to = "/ulisses-informatica/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://sitiomendes.siteslink.com.br/*"
+  to = "/sitio-mendes/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://williammecanica.siteslink.com.br/*"
+  to = "/william-automecanica/:splat"
+  status = 200
+  force = true
