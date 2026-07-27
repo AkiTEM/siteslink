@@ -1,23 +1,31 @@
 [[redirects]]
-  from = "https://crisdoces.siteslink.com.br/*"
+  from = "/*"
   to = "/cris-doces/:splat"
   status = 200
   force = true
+  [redirects.conditions]
+    Host = "crisdoces.siteslink.com.br"
 
 [[redirects]]
-  from = "https://ulissesinformatica.siteslink.com.br/*"
+  from = "/*"
   to = "/ulisses-informatica/:splat"
   status = 200
   force = true
+  [redirects.conditions]
+    Host = "ulissesinformatica.siteslink.com.br"
 
 [[redirects]]
-  from = "https://sitiomendes.siteslink.com.br/*"
+  from = "/*"
   to = "/sitio-mendes/:splat"
   status = 200
   force = true
+  [redirects.conditions]
+    Host = "sitiomendes.siteslink.com.br"
 
 [[redirects]]
-  from = "https://williammecanica.siteslink.com.br/*"
+  from = "/*"
   to = "/william-automecanica/:splat"
   status = 200
   force = true
+  [redirects.conditions]
+    Host = "williammecanica.siteslink.com.br"
