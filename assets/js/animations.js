@@ -60,6 +60,22 @@
     }, { passive: true });
   }
 
+  // WhatsApp FAB — show after scrolling past hero
+  var fab = document.querySelector('.whatsapp-fab');
+  var heroEl = document.querySelector('[class*="-hero"]');
+  if (fab && heroEl) {
+    var fabObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          fab.classList.remove('fab-visible');
+        } else {
+          fab.classList.add('fab-visible');
+        }
+      });
+    }, { threshold: 0 });
+    fabObserver.observe(heroEl);
+  }
+
   // Counter animation
   document.querySelectorAll('.count-up').forEach(function (el) {
     var counterObserver = new IntersectionObserver(function (entries) {

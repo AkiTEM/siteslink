@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sítio Mendes — Eventos, Casamentos & Lazer</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
   <meta name="description" content="Aluguel de sítio para casamentos, festas, confraternizações e lazer. Piscina, área gourmet e muito verde.">
+  <script src="../assets/js/gate.js"></script>
   <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -31,11 +32,37 @@
     <div class="sm-hero-content">
       <span class="sm-hero-tag hero-tag-anim">Natureza &amp; Conforto</span>
       <h1 class="hero-title-anim">O cenário perfeito para seu <em>evento</em></h1>
-      <p class="hero-desc-anim">Espaço completo com piscina, área gourmet, campo de futebol e acomodações. Ideal para casamentos, festas e fins de semana em família.</p>
+      <p class="hero-desc-anim">Espaço completo com piscina, área gourmet, jogos e acomodações. Ideal para casamentos, festas e fins de semana em família.</p>
       <a href="https://wa.me/5511972583291?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20datas%20para%20o%20S%C3%ADtio%20Mendes." class="sm-btn hero-cta-anim">
         Consultar Disponibilidade
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
+    </div>
+  </section>
+
+  <!-- Vídeos -->
+  <section class="sm-section">
+    <div class="sm-section-header reveal">
+      <h2>Conheça o Sítio</h2>
+      <p>Veja de perto a natureza e a estrutura que esperam por você.</p>
+    </div>
+    <div class="sm-videos reveal-stagger">
+      <div class="sm-video reveal-child">
+        <iframe src="https://www.youtube.com/embed/s33RDIRU8_A" title="Sítio Mendes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <span class="sm-video-label">Sítio Mendes</span>
+      </div>
+      <div class="sm-video reveal-child">
+        <iframe src="https://www.youtube.com/embed/NQOIKCF74B8" title="Piscina" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <span class="sm-video-label">Piscina</span>
+      </div>
+      <div class="sm-video reveal-child">
+        <iframe src="https://www.youtube.com/embed/mECwp8kj3Yg" title="Natureza" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <span class="sm-video-label">Natureza</span>
+      </div>
+      <div class="sm-video reveal-child">
+        <iframe src="https://www.youtube.com/embed/JOJZjOhxarg" title="Natureza" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <span class="sm-video-label">Natureza</span>
+      </div>
     </div>
   </section>
 
@@ -48,7 +75,24 @@
     <div class="sm-carousel reveal-stagger">
 
       <article class="sm-card reveal-child">
-        <div class="sm-card-img" role="img" aria-label="Piscina"></div>
+        <div class="sm-card-slider">
+          <div class="sm-card-slides">
+            <img src="img/piscina/20251120_135258.jpg" alt="Piscina - dia" loading="eager">
+            <img src="img/piscina/20251120_145039.jpg" alt="Piscina - vista" loading="lazy">
+            <img src="img/piscina/20251121_000604.jpg" alt="Piscina - iluminada" loading="lazy">
+            <img src="img/piscina/20251220_032733.jpg" alt="Piscina - noturna com escorregador" loading="lazy">
+            <img src="img/piscina/20251220_032825.jpg" alt="Piscina - área de descanso" loading="lazy">
+            <img src="img/piscina/20251220_150549.jpg" alt="Piscina - tarde" loading="lazy">
+            <img src="img/piscina/20251220_220415.jpg" alt="Piscina - LED azul" loading="lazy">
+            <img src="img/piscina/20251221_014535.jpg" alt="Piscina - LED roxo" loading="lazy">
+            <img src="img/piscina/20260221_001420.jpg" alt="Piscina - LED verde" loading="lazy">
+            <img src="img/piscina/20260221_185528.jpg" alt="Piscina - decoração com balões" loading="lazy">
+            <img src="img/piscina/20260221_185804.jpg" alt="Piscina - festa com balões" loading="lazy">
+          </div>
+          <button class="sm-slider-prev" aria-label="Anterior">&#10094;</button>
+          <button class="sm-slider-next" aria-label="Próxima">&#10095;</button>
+          <div class="sm-slider-counter"><span>1</span> / 11</div>
+        </div>
         <div class="sm-card-body">
           <h3>Piscina</h3>
           <p>Piscina ampla com área de descanso, espreguiçadeiras e paisagismo natural.</p>
@@ -56,7 +100,19 @@
       </article>
 
       <article class="sm-card reveal-child">
-        <div class="sm-card-img" role="img" aria-label="Área gourmet"></div>
+        <div class="sm-card-slider">
+          <div class="sm-card-slides">
+            <img src="img/area_gourmet/area1.jpeg" alt="Área gourmet - visão geral" loading="lazy">
+            <img src="img/area_gourmet/area2.jpeg" alt="Área gourmet - mesas e rede" loading="lazy">
+            <img src="img/area_gourmet/area3.jpeg" alt="Área gourmet - churrasqueira e forno" loading="lazy">
+            <img src="img/area_gourmet/area4.jpeg" alt="Área gourmet - vista para piscina" loading="lazy">
+            <img src="img/area_gourmet/area5.jpeg" alt="Área gourmet - noturna com festa" loading="lazy">
+            <img src="img/area_gourmet/area6.jpg" alt="Área gourmet - noturna com piscina" loading="lazy">
+          </div>
+          <button class="sm-slider-prev" aria-label="Anterior">&#10094;</button>
+          <button class="sm-slider-next" aria-label="Próxima">&#10095;</button>
+          <div class="sm-slider-counter"><span>1</span> / 6</div>
+        </div>
         <div class="sm-card-body">
           <h3>Área Gourmet</h3>
           <p>Churrasqueira, forno a lenha, bancada completa e espaço coberto para até 80 pessoas.</p>
@@ -64,15 +120,30 @@
       </article>
 
       <article class="sm-card reveal-child">
-        <div class="sm-card-img" role="img" aria-label="Campo de futebol"></div>
+        <img class="sm-card-img" src="img/area_jogo/jogo1.jpeg" alt="Área de jogos e diversão" loading="lazy">
         <div class="sm-card-body">
-          <h3>Campo de Futebol</h3>
-          <p>Gramado bem cuidado, iluminação noturna e espaço para atividades ao ar livre.</p>
+          <h3>Diversão & Jogos</h3>
+          <p>Mesa de sinuca, espreguiçadeiras e espaço coberto para diversão ao ar livre.</p>
         </div>
       </article>
 
       <article class="sm-card reveal-child">
-        <div class="sm-card-img" role="img" aria-label="Acomodações"></div>
+        <div class="sm-card-slider">
+          <div class="sm-card-slides">
+            <img src="img/acomodacao/acomodacao1.jpeg" alt="Acomodação - quarto duplo" loading="lazy">
+            <img src="img/acomodacao/acomodacao2.jpeg" alt="Acomodação - quarto casal" loading="lazy">
+            <img src="img/acomodacao/acomodacao3.jpeg" alt="Acomodação - cozinha rústica" loading="lazy">
+            <img src="img/acomodacao/acomodacao4.jpeg" alt="Acomodação - sala de estar" loading="lazy">
+            <img src="img/acomodacao/acomodacao5.jpeg" alt="Acomodação - suíte" loading="lazy">
+            <img src="img/acomodacao/acomodacao6.jpeg" alt="Acomodação - quarto solteiro" loading="lazy">
+            <img src="img/acomodacao/acomodacao7.jpeg" alt="Acomodação - quarto twin" loading="lazy">
+            <img src="img/acomodacao/acomodacao8.jpeg" alt="Acomodação - quarto com vista" loading="lazy">
+            <img src="img/acomodacao/acomodacao9.jpeg" alt="Acomodação - sala TV com mata" loading="lazy">
+          </div>
+          <button class="sm-slider-prev" aria-label="Anterior">&#10094;</button>
+          <button class="sm-slider-next" aria-label="Próxima">&#10095;</button>
+          <div class="sm-slider-counter"><span>1</span> / 9</div>
+        </div>
         <div class="sm-card-body">
           <h3>Acomodações</h3>
           <p>Quartos confortáveis com roupa de cama, ventilação e banheiro privativo.</p>
@@ -151,9 +222,13 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Airbnb
         </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="sm-footer-link">
+        <a href="https://www.instagram.com/sitio_mendes04?igsh=cWx1cmxpMjEzN2g1" target="_blank" rel="noopener noreferrer" class="sm-footer-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
+          @sitio_mendes04
+        </a>
+        <a href="https://www.facebook.com/lourival.mendes.56" target="_blank" rel="noopener noreferrer" class="sm-footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
         </a>
       </div>
       <div class="sm-footer-col">
@@ -178,6 +253,27 @@ document.querySelector('.sm-menu-toggle').addEventListener('click',function(){
 });
 document.querySelectorAll('.sm-nav a').forEach(function(a){
   a.addEventListener('click',function(){document.querySelector('.sm-nav').classList.remove('open');});
+});
+
+document.querySelectorAll('.sm-card-slider').forEach(function(slider){
+  var slides = slider.querySelector('.sm-card-slides');
+  var imgs = slides.querySelectorAll('img');
+  var total = imgs.length;
+  var idx = 0;
+  var counter = slider.querySelector('.sm-slider-counter span');
+  function go(i){
+    idx = (i + total) % total;
+    slides.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    counter.textContent = idx + 1;
+  }
+  slider.querySelector('.sm-slider-prev').addEventListener('click', function(){ go(idx - 1); });
+  slider.querySelector('.sm-slider-next').addEventListener('click', function(){ go(idx + 1); });
+  var startX = 0;
+  slides.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  slides.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40) go(idx + (diff > 0 ? 1 : -1));
+  });
 });
 </script>
 </body>

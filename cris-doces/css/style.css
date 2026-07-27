@@ -1,0 +1,562 @@
+/* ===================================================
+   Crys Docess — Confeitaria Fina & Artesanal
+   Font: Plus Jakarta Sans
+   Paleta: creme #FDFBF7 · cacau #3E2723 · rosa #C9928E · dourado #C9A96E
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cd-bg:        #FDFBF7;
+  --cd-surface:   #FFFFFF;
+  --cd-text:      #3E2723;
+  --cd-text-soft: #7D5A50;
+  --cd-accent:    #C9928E;
+  --cd-gold:      #C9A96E;
+  --cd-border:    #EDE4DA;
+  --cd-radius:    12px;
+  --cd-font:      'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--cd-font);
+  background: var(--cd-bg);
+  color: var(--cd-text);
+}
+
+/* ─── Header ─── */
+.cd-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+  background: rgba(253, 251, 247, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cd-border);
+}
+
+.cd-logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.cd-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cd-logo-text span { color: var(--cd-accent); }
+
+.cd-nav { display: flex; gap: 32px; }
+
+.cd-nav a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--cd-text-soft);
+  position: relative;
+  transition: color 0.25s;
+}
+
+.cd-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--cd-accent);
+  border-radius: 1px;
+  transition: width 0.3s;
+}
+
+.cd-nav a:hover { color: var(--cd-text); }
+.cd-nav a:hover::after { width: 100%; }
+
+.cd-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cd-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cd-text);
+  border-radius: 2px;
+}
+
+/* ─── Hero ─── */
+.cd-hero {
+  position: relative;
+  height: clamp(380px, 30vw, 520px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cd-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('../img/hero1.jpeg')
+    center / cover no-repeat;
+}
+
+.cd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(253, 251, 247, 0.93) 0%,
+    rgba(253, 251, 247, 0.80) 40%,
+    rgba(201, 146, 142, 0.22) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+.cd-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 620px;
+}
+
+.cd-hero-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cd-gold);
+  border: 1px solid var(--cd-gold);
+  padding: 5px 16px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+
+.cd-hero-content h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+
+.cd-hero-content h1 em {
+  font-style: normal;
+  color: var(--cd-accent);
+}
+
+.cd-hero-content p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--cd-text-soft);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--cd-font);
+  color: #fff;
+  background: var(--cd-accent);
+  border-radius: 52px;
+  box-shadow: 0 4px 18px rgba(201, 146, 142, 0.3);
+  transition: all 0.3s;
+}
+
+.cd-btn:hover {
+  background: #b57f7a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 146, 142, 0.4);
+}
+
+.cd-btn svg { transition: transform 0.25s; }
+.cd-btn:hover svg { transform: translateX(3px); }
+
+/* ─── Sections ─── */
+.cd-section {
+  padding: 36px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cd-section-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cd-section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.cd-section-header p {
+  font-size: 0.9375rem;
+  color: var(--cd-text-soft);
+  font-weight: 300;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ─── Videos Carousel ─── */
+.cd-videos {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 40px;
+  padding: 4px 40px 12px;
+  margin: 0 -40px;
+  scrollbar-width: none;
+}
+
+.cd-videos::-webkit-scrollbar { display: none; }
+
+.cd-video {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.cd-video:last-child { margin-right: 40px; }
+
+.cd-video iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: none;
+  border-radius: var(--cd-radius);
+  background: var(--cd-border);
+}
+
+.cd-video-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--cd-text-soft);
+  margin-top: 10px;
+}
+
+/* ─── Carousel ─── */
+.cd-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 40px;
+  padding: 4px 40px 12px;
+  margin: 0 -40px;
+  scrollbar-width: none;
+}
+
+.cd-carousel::-webkit-scrollbar { display: none; }
+
+.cd-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: var(--cd-surface);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(62, 39, 35, 0.04);
+  transition: box-shadow 0.35s, transform 0.3s;
+}
+
+.cd-card:hover {
+  box-shadow: 0 10px 36px rgba(62, 39, 35, 0.09);
+  transform: translateY(-4px);
+}
+
+.cd-card:last-child {
+  margin-right: 40px;
+}
+
+.cd-card-img {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #EDE4DA 0%, #F5EDE4 100%);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding: 8px;
+}
+
+.cd-card:nth-child(1) .cd-card-img {
+  background-image: url('../img/bombom_uva.jpg');
+}
+
+.cd-card:nth-child(2) .cd-card-img {
+  background-image: url('../img/brigadeiro_gourmet.jpeg');
+}
+
+.cd-card:nth-child(3) .cd-card-img {
+  background-image: url('../img/beijinho_gourmet.jpg');
+}
+
+.cd-card:nth-child(4) .cd-card-img {
+  background-image: url('../img/panetone_trufado.jpg');
+}
+
+.cd-card:nth-child(5) .cd-card-img {
+  background-image: url('../img/copo_delicias.jpg');
+}
+
+.cd-card-body {
+  padding: 20px;
+}
+
+.cd-card-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cd-card-body p {
+  font-size: 0.8125rem;
+  color: var(--cd-text-soft);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.cd-card-cta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--cd-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s;
+}
+
+.cd-card-cta:hover { gap: 12px; }
+
+/* Scroll indicator dots */
+.cd-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.cd-carousel-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cd-border);
+}
+
+.cd-carousel-dots span:first-child {
+  background: var(--cd-accent);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* ─── Diferenciais Row ─── */
+.cd-diff-row {
+  display: flex;
+  gap: 20px;
+}
+
+.cd-diff-item {
+  flex: 1;
+  min-width: 0;
+  background: var(--cd-surface);
+  border: 1px solid var(--cd-border);
+  border-radius: var(--cd-radius);
+  padding: 22px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(62, 39, 35, 0.04);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.cd-diff-item:hover {
+  border-color: var(--cd-accent);
+  box-shadow: 0 8px 28px rgba(201, 146, 142, 0.10);
+}
+
+.cd-diff-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(201, 146, 142, 0.10);
+  margin-bottom: 16px;
+}
+
+.cd-diff-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--cd-accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cd-diff-item h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cd-diff-item p {
+  font-size: 0.8125rem;
+  color: var(--cd-text-soft);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ─── Footer ─── */
+.cd-footer {
+  padding: 32px 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--cd-border);
+}
+
+.cd-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--cd-border);
+  text-align: center;
+}
+
+.cd-footer-col h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cd-footer-col p {
+  font-size: 0.8125rem;
+  color: var(--cd-text-soft);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.cd-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--cd-accent);
+  margin-top: 8px;
+  transition: gap 0.2s;
+}
+
+.cd-footer-link:hover { gap: 10px; }
+
+.cd-footer-col .cd-footer-link + .cd-footer-link { margin-top: 6px; display: flex; justify-content: center; }
+
+.cd-footer-bottom {
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.75rem;
+  color: var(--cd-text-soft);
+  font-weight: 300;
+}
+
+/* ─── Responsivo ─── */
+@media (min-width: 901px) {
+  .cd-videos { justify-content: center; }
+  .cd-carousel-dots { display: none; }
+}
+
+@media (max-width: 900px) {
+  .cd-header { padding: 0 20px; }
+  .cd-diff-row { flex-direction: column; }
+  .cd-section { padding: 32px 20px; }
+  .cd-carousel { scroll-padding-left: 20px; padding-left: 20px; padding-right: 20px; margin: 0 -20px; }
+  .cd-card:last-child { margin-right: 20px; }
+  .cd-videos { scroll-padding-left: 20px; padding-left: 20px; padding-right: 20px; margin: 0 -20px; justify-content: flex-start; }
+  .cd-video:last-child { margin-right: 20px; }
+}
+
+@media (max-width: 768px) {
+  .cd-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(253, 251, 247, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--cd-border);
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .cd-nav.open { display: flex; }
+  .cd-menu-toggle { display: flex; }
+
+  .cd-hero {
+    height: auto;
+    padding: 100px 20px 48px;
+  }
+
+  .cd-hero-content h1 { font-size: 1.5rem; }
+  .cd-hero-content p { font-size: 0.875rem; margin-bottom: 20px; }
+  .cd-btn { padding: 12px 26px; font-size: 0.8125rem; }
+
+  .cd-section { padding: 28px 16px; }
+  .cd-section-header { margin-bottom: 20px; }
+  .cd-section-header h2 { font-size: 1.4rem; }
+  .cd-card { flex: 0 0 calc(100vw - 48px); }
+  .cd-card-img { height: 190px; }
+  .cd-carousel { scroll-padding-left: 16px; padding-left: 16px; padding-right: 16px; margin: 0 -16px; gap: 14px; }
+  .cd-card:last-child { margin-right: 16px; }
+  .cd-videos { scroll-padding-left: 16px; padding-left: 16px; padding-right: 16px; margin: 0 -16px; gap: 14px; }
+  .cd-video { flex: 0 0 55vw; }
+  .cd-video:last-child { margin-right: 16px; }
+  .cd-footer { padding: 24px 16px 0; }
+  .cd-footer-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 400px) {
+  .cd-header { padding: 0 16px; height: 56px; }
+  .cd-hero { padding: 88px 16px 40px; }
+  .cd-hero-content h1 { font-size: 1.3rem; }
+  .cd-hero-content p { font-size: 0.8125rem; }
+  .cd-hero-tag { font-size: 0.6rem; padding: 4px 12px; }
+  .cd-btn { padding: 11px 22px; font-size: 0.75rem; }
+  .cd-section { padding: 24px 14px; }
+  .cd-card { flex: 0 0 calc(100vw - 40px); }
+  .cd-card-img { height: 170px; }
+  .cd-card-body { padding: 16px; }
+  .cd-video { flex: 0 0 50vw; }
+}

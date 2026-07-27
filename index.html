@@ -65,22 +65,22 @@
   <p class="hub-sub">Hub de desenvolvimento &mdash; acesse cada landing page abaixo.</p>
 
   <div class="hub-grid">
-    <a href="/cris-doces/" class="hub-card">
-      <h2>Cris Doces</h2>
-      <p>Confeitaria fina &amp; artesanal. Bolos, doces e kits de festa.</p>
+    <a href="/cris-doces/" class="hub-card" data-site="cris-doces">
+      <h2>Crys Docess</h2>
+      <p>Confeitaria fina &amp; artesanal. Bombom de uva, brigadeiro gourmet.</p>
       <span class="hub-link">Abrir &rarr;</span>
     </a>
-    <a href="/ulisses-informatica/" class="hub-card">
+    <a href="/ulisses-informatica/" class="hub-card" data-site="ulisses-informatica">
       <h2>Ulisses Informática</h2>
       <p>Suporte técnico, manutenção de PCs, notebooks e redes.</p>
       <span class="hub-link">Abrir &rarr;</span>
     </a>
-    <a href="/sitio-mendes/" class="hub-card">
+    <a href="/sitio-mendes/" class="hub-card" data-site="sitio-mendes">
       <h2>Sítio Mendes</h2>
       <p>Aluguel de sítio para eventos, casamentos e lazer.</p>
       <span class="hub-link">Abrir &rarr;</span>
     </a>
-    <a href="/william-automecanica/" class="hub-card">
+    <a href="/william-automecanica/" class="hub-card" data-site="william-automecanica">
       <h2>William Auto Mecânica</h2>
       <p>Oficina mecânica premium, diagnóstico por scanner.</p>
       <span class="hub-link">Abrir &rarr;</span>
@@ -91,5 +91,13 @@
     <p>Execute com <code>npx serve .</code> ou use a extensão <strong>Live Server</strong> do VS Code.</p>
   </div>
 
+<script>
+fetch('/config.json?t='+Date.now()).then(function(r){return r.json()}).then(function(cfg){
+  document.querySelectorAll('[data-site]').forEach(function(card){
+    var site=cfg.sites[card.dataset.site];
+    if(site&&site.active===false){card.style.display='none';}
+  });
+}).catch(function(){});
+</script>
 </body>
 </html>
