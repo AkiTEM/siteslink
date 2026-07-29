@@ -29,3 +29,10 @@ dist/
 
 # Claude Code
 .claude/
+
+# Sync
+*.bundle
+sync_up.*
+sync_down.*
+.last-sync
+.sync-config
