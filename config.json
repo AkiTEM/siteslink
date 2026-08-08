@@ -3,6 +3,7 @@
     "cris-doces": { "active": true, "name": "Crys Docess" },
     "ulisses-informatica": { "active": true, "name": "Ulisses Informática" },
     "sitio-mendes": { "active": true, "name": "Sítio Mendes" },
-    "william-automecanica": { "active": true, "name": "William Auto Mecânica" }
+    "william-automecanica": { "active": true, "name": "William Auto Mecânica" },
+    "erick-estillo": { "active": true, "name": "Erick Estillo" }
   }
 }

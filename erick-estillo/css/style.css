@@ -1,0 +1,508 @@
+/* ===================================================
+   Erick Estillo — Martelinho de Ouro
+   Font: Montserrat
+   Paleta: preto #0D0D0D · surface #1A1A1A · dourado #C9A84C
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --ee-bg:        #0D0D0D;
+  --ee-surface:   #1A1A1A;
+  --ee-text:      #FAFAF5;
+  --ee-text-soft: #A1A1AA;
+  --ee-accent:    #C9A84C;
+  --ee-accent-dim: rgba(201, 168, 76, 0.10);
+  --ee-border:    #2A2A2A;
+  --ee-radius:    12px;
+  --ee-font:      'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--ee-font);
+  background: var(--ee-bg);
+  color: var(--ee-text);
+}
+
+/* ─── Header ─── */
+.ee-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+  background: rgba(13, 13, 13, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--ee-border);
+}
+
+.ee-logo { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.03em; }
+.ee-logo span { color: var(--ee-accent); }
+.ee-nav { display: flex; gap: 32px; }
+
+.ee-nav a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ee-text-soft);
+  position: relative;
+  transition: color 0.25s;
+}
+
+.ee-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--ee-accent);
+  border-radius: 1px;
+  transition: width 0.3s;
+}
+
+.ee-nav a:hover { color: var(--ee-text); }
+.ee-nav a:hover::after { width: 100%; }
+
+.ee-menu-toggle { display: none; flex-direction: column; gap: 5px; }
+.ee-menu-toggle span { display: block; width: 22px; height: 2px; background: var(--ee-text); border-radius: 2px; }
+
+/* ─── Hero ─── */
+.ee-hero {
+  position: relative;
+  height: clamp(480px, 50vw, 640px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ee-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1594051673969-172a6f721d3c?w=1400&q=80') center/cover no-repeat;
+}
+
+.ee-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.65);
+}
+
+.ee-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 680px;
+}
+
+.ee-hero-logo {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+}
+
+.ee-hero-content h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.ee-hero-content h1 em { font-style: normal; color: var(--ee-accent); }
+
+.ee-hero-content p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--ee-text-soft);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ee-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--ee-font);
+  color: #0D0D0D;
+  background: var(--ee-accent);
+  border-radius: 52px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.25);
+  transition: all 0.3s;
+}
+
+.ee-btn:hover {
+  background: #b8963e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+}
+
+.ee-btn svg { transition: transform 0.25s; }
+.ee-btn:hover svg { transform: translateX(3px); }
+
+/* ─── Insurance Badge ─── */
+.ee-insurance {
+  text-align: center;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ee-insurance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: var(--ee-surface);
+  border: 1px solid var(--ee-accent);
+  border-radius: 52px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ee-accent);
+  white-space: nowrap;
+}
+
+.ee-insurance-badge svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--ee-accent);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── Sections ─── */
+.ee-section {
+  padding: 36px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ee-section-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ee-section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.ee-section-header p {
+  font-size: 0.9375rem;
+  color: var(--ee-text-soft);
+  font-weight: 300;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ─── Carousel (card com imagem, estilo William) ─── */
+.ee-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 40px;
+  padding: 4px 40px 12px;
+  margin: 0 -40px;
+  scrollbar-width: none;
+}
+
+.ee-carousel::-webkit-scrollbar { display: none; }
+
+.ee-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: var(--ee-surface);
+  border: 1px solid var(--ee-border);
+  border-radius: var(--ee-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.35s, transform 0.3s, border-color 0.3s;
+}
+
+.ee-card:hover {
+  box-shadow: 0 10px 36px rgba(201, 168, 76, 0.12);
+  transform: translateY(-4px);
+  border-color: var(--ee-accent);
+}
+
+.ee-card:last-child { margin-right: 40px; }
+
+.ee-card-img {
+  width: 100%;
+  height: 180px;
+  background-color: var(--ee-surface);
+  background-size: cover;
+  background-position: center;
+}
+
+.ee-card:nth-child(1) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1666009387246-65e8ad8e7103?w=600&q=80');
+}
+
+.ee-card:nth-child(2) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1652987086612-d948b775d358?w=600&q=80');
+}
+
+.ee-card:nth-child(3) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1549064233-945d7063292f?w=600&q=80');
+}
+
+.ee-card:nth-child(4) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1708805282706-f44730b7e527?w=600&q=80');
+}
+
+.ee-card:nth-child(5) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1652860316277-370ca5b1b1df?w=600&q=80');
+}
+
+.ee-card:nth-child(6) .ee-card-img {
+  background-image: url('https://images.unsplash.com/photo-1658244500543-47f32dc51dc2?w=600&q=80');
+}
+
+.ee-card-body { padding: 20px; }
+
+.ee-card-body h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+
+.ee-card-body p {
+  font-size: 0.8125rem;
+  color: var(--ee-text-soft);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.ee-card-cta {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ee-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s;
+}
+
+.ee-card-cta:hover { gap: 12px; }
+
+.ee-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.ee-carousel-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ee-border);
+}
+
+.ee-carousel-dots span:first-child {
+  background: var(--ee-accent);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* ─── Diferenciais Row ─── */
+.ee-diff-row {
+  display: flex;
+  gap: 20px;
+}
+
+.ee-diff-item {
+  flex: 1;
+  min-width: 0;
+  background: var(--ee-surface);
+  border: 1px solid var(--ee-border);
+  border-radius: var(--ee-radius);
+  padding: 22px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.ee-diff-item:hover {
+  border-color: var(--ee-accent);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.10);
+}
+
+.ee-diff-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--ee-accent-dim);
+  margin-bottom: 16px;
+}
+
+.ee-diff-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--ee-accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ee-diff-item h3 { font-size: 0.9375rem; font-weight: 600; margin-bottom: 6px; }
+
+.ee-diff-item p {
+  font-size: 0.8125rem;
+  color: var(--ee-text-soft);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ─── Mapa ─── */
+.ee-map {
+  padding: 0 40px 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─── Footer ─── */
+.ee-footer {
+  padding: 32px 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--ee-border);
+}
+
+.ee-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--ee-border);
+  text-align: center;
+}
+
+.ee-footer-col h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ee-footer-col p {
+  font-size: 0.8125rem;
+  color: var(--ee-text-soft);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.ee-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ee-accent);
+  margin-top: 8px;
+  transition: gap 0.2s;
+}
+
+.ee-footer-link:hover { gap: 10px; }
+
+.ee-footer-col .ee-footer-link + .ee-footer-link { margin-top: 6px; display: flex; justify-content: center; }
+
+.ee-footer-bottom {
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.75rem;
+  color: var(--ee-text-soft);
+  font-weight: 300;
+}
+
+@media (min-width: 901px) {
+  .ee-carousel-dots { display: none; }
+}
+
+/* ─── Responsivo ─── */
+@media (max-width: 900px) {
+  .ee-header { padding: 0 20px; }
+  .ee-diff-row { flex-direction: column; }
+  .ee-section { padding: 32px 20px; }
+  .ee-carousel { scroll-padding-left: 20px; padding-left: 20px; padding-right: 20px; margin: 0 -20px; }
+  .ee-card:last-child { margin-right: 20px; }
+  .ee-insurance { padding: 16px 20px; }
+  .ee-map { padding: 0 20px 8px; }
+}
+
+@media (max-width: 768px) {
+  .ee-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(13, 13, 13, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--ee-border);
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .ee-nav.open { display: flex; }
+  .ee-menu-toggle { display: flex; }
+  .ee-hero { height: auto; min-height: 420px; padding: 100px 20px 48px; }
+  .ee-hero-content { padding: 0 20px; }
+  .ee-hero-logo { max-width: 220px; margin-bottom: 16px; }
+  .ee-hero-content h1 { font-size: 1.5rem; }
+  .ee-hero-content p { font-size: 0.875rem; margin-bottom: 20px; }
+  .ee-btn { padding: 12px 26px; font-size: 0.8125rem; }
+  .ee-section { padding: 28px 16px; }
+  .ee-section-header { margin-bottom: 20px; }
+  .ee-section-header h2 { font-size: 1.4rem; }
+  .ee-card { flex: 0 0 calc(100vw - 48px); }
+  .ee-card-img { height: 150px; }
+  .ee-carousel { scroll-padding-left: 16px; padding-left: 16px; padding-right: 16px; margin: 0 -16px; gap: 14px; }
+  .ee-card:last-child { margin-right: 16px; }
+  .ee-footer { padding: 24px 16px 0; }
+  .ee-footer-grid { grid-template-columns: 1fr; gap: 20px; }
+  .ee-insurance { padding: 12px 16px; }
+  .ee-insurance-badge { font-size: 0.65rem; padding: 10px 16px; letter-spacing: 0.03em; gap: 6px; }
+  .ee-map { padding: 0 16px 8px; }
+}
+
+@media (max-width: 400px) {
+  .ee-header { padding: 0 16px; height: 56px; }
+  .ee-hero { padding: 88px 16px 40px; min-height: 380px; }
+  .ee-hero-content { padding: 0 16px; }
+  .ee-hero-logo { max-width: 190px; margin-bottom: 14px; }
+  .ee-hero-content h1 { font-size: 1.3rem; }
+  .ee-hero-content p { font-size: 0.8125rem; }
+  .ee-btn { padding: 11px 22px; font-size: 0.75rem; }
+  .ee-section { padding: 24px 14px; }
+  .ee-card { flex: 0 0 calc(100vw - 40px); }
+  .ee-card-img { height: 130px; }
+  .ee-card-body { padding: 16px; }
+  .ee-insurance-badge { font-size: 0.6rem; padding: 8px 14px; }
+}

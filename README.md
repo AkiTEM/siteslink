@@ -14,6 +14,7 @@ Plataforma multi-site que hospeda landing pages independentes sob um mesmo deplo
 | **Ulisses Informática** — Suporte técnico & TI | `ulissesinformatica.siteslink.com.br` | HTML5, CSS3 (Inter) |
 | **Sítio Mendes** — Eventos, casamentos & lazer | `sitiomendes.siteslink.com.br` | HTML5, CSS3 (Outfit) |
 | **William Auto Mecânica** — Oficina premium | `williammecanica.siteslink.com.br` | HTML5, CSS3 (Montserrat) |
+| **Erick Estillo** — Martelinho de ouro & funilaria | `erickestillo.siteslink.com.br` | HTML5, CSS3 (Montserrat) |
 
 ---
 
@@ -39,16 +40,21 @@ siteslink/
 │   ├── index.html
 │   ├── style.css
 │   └── favicon.svg
-└── william-automecanica/
+├── william-automecanica/
     ├── index.html
     ├── style.css
     └── favicon.svg
+└── erick-estillo/
+    ├── index.html
+    ├── css/style.css
+    ├── img/erick_estillo.png
+    └── img/favicon.png
 ```
 
 ### Princípios
 
 - **Zero frameworks** — HTML5 + CSS3 + vanilla JS. Sem build step, sem dependências.
-- **CSS isolado** — cada site usa prefixo exclusivo (`cd-`, `ui-`, `sm-`, `wm-`) para evitar colisões.
+- **CSS isolado** — cada site usa prefixo exclusivo (`cd-`, `ui-`, `sm-`, `wm-`, `ee-`) para evitar colisões.
 - **Mobile-first** — breakpoints em 900px, 768px e 400px. Heroes, cards e navegação adaptados.
 - **Performance** — assets inline (SVG, fontes via Google Fonts), sem bundle. Cada página carrega apenas seu próprio CSS.
 - **Acessibilidade** — `prefers-reduced-motion` desativa animações; ARIA labels nos FABs e imagens.
@@ -92,6 +98,7 @@ http://<seu-ip>:3000/cris-doces/
 http://<seu-ip>:3000/ulisses-informatica/
 http://<seu-ip>:3000/sitio-mendes/
 http://<seu-ip>:3000/william-automecanica/
+http://<seu-ip>:3000/erick-estillo/
 ```
 
 ---

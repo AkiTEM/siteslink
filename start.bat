@@ -42,6 +42,7 @@ echo   /cris-doces/
 echo   /ulisses-informatica/
 echo   /sitio-mendes/
 echo   /william-automecanica/
+echo   /erick-estillo/
 echo  --------------------------------------------
 echo.
 echo  Pressione Ctrl+C para parar o servidor.

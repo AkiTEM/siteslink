@@ -2,7 +2,9 @@ https://crisdoces.siteslink.com.br/assets/*  /assets/:splat  200!
 https://ulissesinformatica.siteslink.com.br/assets/*  /assets/:splat  200!
 https://sitiomendes.siteslink.com.br/assets/*  /assets/:splat  200!
 https://williammecanica.siteslink.com.br/assets/*  /assets/:splat  200!
+https://erickestillo.siteslink.com.br/assets/*  /assets/:splat  200!
 https://crisdoces.siteslink.com.br/*  /cris-doces/:splat  200!
 https://ulissesinformatica.siteslink.com.br/*  /ulisses-informatica/:splat  200!
 https://sitiomendes.siteslink.com.br/*  /sitio-mendes/:splat  200!
 https://williammecanica.siteslink.com.br/*  /william-automecanica/:splat  200!
+https://erickestillo.siteslink.com.br/*  /erick-estillo/:splat  200!
